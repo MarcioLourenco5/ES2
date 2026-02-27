@@ -2,30 +2,17 @@ package com.es2.factorymethod;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            // 1. Criando um Computer através da Factory
-            Product comp = FactoryProduct.makeProduct("Computer");
-            comp.setBrand("Dell");
-            System.out.println("Produto criado: " + comp.getClass().getSimpleName());
-            System.out.println("Marca definida: " + comp.getBrand());
+        Product p1 = FactoryProduct.makeProduct("Computer");
+        p1.setBrand("Lenovo");
+        System.out.println(p1);
 
-            System.out.println("--------------------------------");
+        Product p2 = FactoryProduct.makeProduct("Software");
+        p2.setBrand("Microsoft");
+        System.out.println(p2);
 
-            // 2. Criando um Software através da Factory
-            Product soft = FactoryProduct.makeProduct("Software");
-            soft.setBrand("Windows 11");
-            System.out.println("Produto criado: " + soft.getClass().getSimpleName());
-            System.out.println("Marca definida: " + soft.getBrand());
-
-            System.out.println("--------------------------------");
-
-            // 3. Testando o erro (Produto inexistente)
-            System.out.println("Tentando criar um produto inválido...");
-            Product erro = FactoryProduct.makeProduct("Smartphone");
-
-        } catch (UndefinedProductException e) {
-            // Captura a exceção que você corrigiu anteriormente
-            System.err.println("Erro esperado capturado: " + e.getMessage());
-        }
+        // TODO 3: testa um caso inválido (deve lançar UndefinedProductException)
+         Product p3 = FactoryProduct.makeProduct("Exemplo");
+        p3.setBrand("ERRO");
+         System.out.println(p3);
     }
 }

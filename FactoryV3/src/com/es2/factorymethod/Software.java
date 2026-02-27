@@ -3,9 +3,8 @@ package com.es2.factorymethod;
 public class Software implements Product {
     private String brand;
 
-    protected Software() {
-        // Construtor protegido conforme especificação
-    }
+    // package-private
+    Software() { }
 
     @Override
     public String getBrand() {
@@ -15,5 +14,10 @@ public class Software implements Product {
     @Override
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    @Override
+    public String toString() {
+        return "Software{brand='" + brand + "'}";
     }
 }
