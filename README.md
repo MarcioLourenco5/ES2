@@ -24,5 +24,4 @@ O objetivo é reutilizar conexões HTTP limitando o número máximo de instânci
  //---------------------------------//---------------------------------/ Bridge /---------------------------------//------------------------------//
 
 
-# video explicativo Bridge  https://www.youtube.com/watch?v=EdFq_JIThqM&t=64s://www.youtube.com/watch?v=88kAIisOiYs
-
+# video explicativo Bridge https://www.youtube.com/watch?v=88kAIisOiYs
