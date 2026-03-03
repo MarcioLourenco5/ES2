@@ -9,7 +9,7 @@
 # video explicativo Factory https://www.youtube.com/watch?v=EdFq_JIThqM&t=64s
 
  //---------------------------------//---------------------------------/ ObjectPool /---------------------------------//------------------------------//
-#ObjectoPool
+
 
 O objetivo é reutilizar conexões HTTP limitando o número máximo de instâncias criadas e garantindo segurança em ambiente concorrente.
 
@@ -25,3 +25,4 @@ O objetivo é reutilizar conexões HTTP limitando o número máximo de instânci
 
 
 # video explicativo Bridge  https://www.youtube.com/watch?v=EdFq_JIThqM&t=64s://www.youtube.com/watch?v=88kAIisOiYs
+
