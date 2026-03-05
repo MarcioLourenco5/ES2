@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Bridge_Pattern">
+    <output-path>$PROJECT_DIR$/out/artifacts/Bridge_Pattern</output-path>
+    <root id="archive" name="Bridge_Pattern.jar">
+      <element id="module-output" name="Trabalho4_Bridge_Pattern" />
+    </root>
+  </artifact>
+</component>
