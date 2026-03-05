@@ -3,7 +3,7 @@ package com.es2.bridge;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class APIMoodle implements APIServiceInterface{ // ConcreteImplementor
+public class APIMoodle implements APIServiceInterface{ // ConcreteImplementor: Implementa “como” se guarda e se obtém conteúdo.
 
     protected LinkedHashMap<String, String> content = new LinkedHashMap<>();
 
