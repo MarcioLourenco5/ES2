@@ -11,7 +11,7 @@ public class APIMoodle implements APIServiceInterface{ // ConcreteImplementor: I
 
     }
 
-    public String getContent(String contentId){
+    public String getContent(String contentId){ //se contentId.equals("0") → concatena todos os conteúdos armazenados e devolve tudo
         if(contentId.equals("0")){
             String result = "";
             for(Map.Entry<String, String> contentString : this.content.entrySet()){
@@ -19,7 +19,7 @@ public class APIMoodle implements APIServiceInterface{ // ConcreteImplementor: I
             }
             return result;
         }
-        else{
+        else{ // se não devolve apenas o conteudo com aquele contentId
             return this.content.get(contentId);
         }
     }
