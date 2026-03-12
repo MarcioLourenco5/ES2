@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Composite_Pattern">
+    <output-path>$PROJECT_DIR$/out/artifacts/Composite_Pattern</output-path>
+    <root id="archive" name="Composite_Pattern.jar">
+      <element id="module-output" name="Trabalho5_Composite_Pattern" />
+    </root>
+  </artifact>
+</component>
