@@ -25,3 +25,21 @@ O objetivo é reutilizar conexões HTTP limitando o número máximo de instânci
 
 
 # video explicativo Bridge https://www.youtube.com/watch?v=88kAIisOiYs
+
+ //---------------------------------//---------------------------------/ Decorator  /---------------------------------//---------------------------------//
+ O Decorator permite adicionar comportamento dinamicamente sem alterar a classe base. Open/Closed 
+ Ex: AuthInterface auth =
+        new CommonWordsValidator(
+            new Logging(
+                new Auth()
+            )
+        );
+
+   Cada class tem apenas uma responsabilidade : Solid
+   
+Classe              	Responsabilidade
+Auth	                autenticar
+Logging	             registar atividade
+CommonWordsValidator	validar password (se existe em banco de dados de pw comum)
+CaptchaValidator	    verificar captcha
+
