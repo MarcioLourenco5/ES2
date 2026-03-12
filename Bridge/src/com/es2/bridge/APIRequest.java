@@ -2,7 +2,7 @@ package com.es2.bridge;
 
 import java.util.HashMap;
 
-public class APIRequest {
+public class APIRequest { // abstraction
 
     protected HashMap<String, APIServiceInterface> services = new HashMap<>();
 
