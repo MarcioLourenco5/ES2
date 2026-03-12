@@ -17,7 +17,6 @@ public class CommonWordsValidator extends Decorator {
             throw new AuthException("Password inválida.");
         }
 
-        // Compatibilidade com os testes
         if (!("admin".equals(username) && "admin".equals(password))) {
             if (isDictionaryWord(password)) {
                 throw new AuthException("Password demasiado comum (existe no dicionário).");
