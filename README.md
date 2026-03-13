@@ -1,5 +1,7 @@
 ﻿# ES2
+https://miro.com/welcomeonboard/TVR3bUdDak1JS3R4b2FIY2JnZjRRQzFjYnJvUStTYzBsbi92Qm82eGNEejhxbXphTURaQVNscTFicjkzeVNlUXdQYVpXQlJqeFVXTnVVc293WlFiSWh2ZlYvdjNzY2VaR1E0QjgxLzRxUlNvQjBsUldsSlZsWGo1YlBGaTRNUXZBS2NFMDFkcUNFSnM0d3FEN050ekl3PT0hdjE=?share_link_id=159239692577
 
+ 
  //---------------------------------//---------------------------------/ Singleton /---------------------------------//------------------------------//
 
 # video explicativo singleton https://www.youtube.com/watch?v=tSZn4wkBIu8
@@ -42,4 +44,5 @@ Auth	                autenticar
 Logging	             registar atividade
 CommonWordsValidator	validar password (se existe em banco de dados de pw comum)
 CaptchaValidator	    verificar captcha
+
 
