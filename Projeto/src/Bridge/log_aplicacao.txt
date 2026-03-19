@@ -1,0 +1,10 @@
+factory.InfoLog@133314b
+factory.DebugLog@1b2c6ec2
+factory.InfoLog@34c45dca
+factory.DebugLog@312b1dae
+[INFO] -> Sistema inicializado com sucesso.
+[DEBUG] -> Detalhes técnicos da operação X.
+[INFO] -> Sistema inicializado com sucesso.
+[DEBUG] -> Detalhes técnicos da operação X.
+[INFO] -> Sistema inicializado com sucesso.
+[DEBUG] -> Detalhes técnicos da operação X.

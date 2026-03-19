@@ -1,0 +1,2 @@
+[WARNING] 2026-03-19T23:03:50.882195900 -> Espaço em disco quase esgotado.
+[ERROR] 2026-03-19T23:03:50.886185100 -> Falha na ligação à base de dados.
