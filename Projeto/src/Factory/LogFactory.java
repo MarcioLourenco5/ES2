@@ -1,8 +1,13 @@
-package Factory;
-
 public class LogFactory {
 
     public static LogRecord criarLog(LogLevel nivel, String mensagem) {
+        LogLevel nivelGlobal = LogConfig.getInstancia().getNivelMinimo();
+
+        if (nivel.getPrioridade() < nivelGlobal.getPrioridade()) {
+            System.out.println("LOG BLOQUEADO: o sistema está configurado para registar apenas logs a partir de " + nivelGlobal);
+            return null;
+        }
+
         switch (nivel) {
             case INFO:
                 return new InfoLog(mensagem);
