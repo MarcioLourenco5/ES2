@@ -1,0 +1,18 @@
+[WARNING] 2026-03-19T23:03:50.882195900 -> Espaço em disco quase esgotado.
+[ERROR] 2026-03-19T23:03:50.886185100 -> Falha na ligação à base de dados.
+[WARNING] 2026-03-19T23:30:52.765753100 -> Espaço em disco quase esgotado.
+[ERROR] 2026-03-19T23:30:52.765753100 -> Falha na ligação à base de dados.
+[WARNING] 2026-03-20T14:06:35.335068700 -> Espaço em disco quase esgotado.
+[ERROR] 2026-03-20T14:06:35.341062900 -> Falha na ligação à base de dados.
+[INFO] 2026-03-20T14:59:07.608969900 - Aplicação iniciada com sucesso.
+[WARNING] 2026-03-20T14:59:07.613023400 - Memória disponível abaixo do esperado.
+[ERROR] 2026-03-20T14:59:07.616083400 - Falha ao ligar à base de dados.
+[DEBUG] 2026-03-20T14:59:07.616083400 - Valor da variável x = 10.
+[INFO] 2026-03-20T15:12:35.739658200 - Aplicação iniciada com sucesso.
+[WARNING] 2026-03-20T15:12:35.742148600 - Memória disponível abaixo do esperado.
+[ERROR] 2026-03-20T15:12:35.743159100 - Falha ao ligar à base de dados.
+[DEBUG] 2026-03-20T15:12:35.743159100 - Valor da variável x = 10.
+[INFO] 2026-03-20T15:40:57.454851700 - Aplicação iniciada com sucesso.
+[WARNING] 2026-03-20T15:40:57.454851700 - Memória disponível abaixo do esperado.
+[ERROR] 2026-03-20T15:40:57.454851700 - Falha ao ligar à base de dados.
+[DEBUG] 2026-03-20T15:40:57.454851700 - Valor da variável x = 10.

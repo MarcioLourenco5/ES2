@@ -1,0 +1,4 @@
+[INFO] 2026-03-20T15:00:54.250603400 - Aplicação iniciada com sucesso.
+[WARNING] 2026-03-20T15:00:54.262110300 - Memória disponível abaixo do esperado.
+[ERROR] 2026-03-20T15:00:54.263105800 - Falha ao ligar à base de dados.
+[DEBUG] 2026-03-20T15:00:54.263105800 - Valor da variável x = 10.
