@@ -13,11 +13,18 @@ public class LogGrupo implements LogComponente {
     private final List<LogComponente> componentes;
 
     public LogGrupo(String nomeCategoria) {
+        if (nomeCategoria == null || nomeCategoria.isBlank()) {
+            throw new IllegalArgumentException("O nome da categoria não pode ser nulo ou vazio.");
+        }
+
         this.nomeCategoria = nomeCategoria;
         this.componentes = new ArrayList<>();
     }
 
     public void adicionar(LogComponente componente) {
+        if (componente == null) {
+            throw new IllegalArgumentException("O componente não pode ser nulo.");
+        }
         componentes.add(componente);
     }
 
@@ -56,7 +63,7 @@ public class LogGrupo implements LogComponente {
     @Override
     public List<LogRecord> obterLogsEntreDatas(LocalDateTime inicio, LocalDateTime fim) {
         if (inicio.isAfter(fim)) {
-            throw new IllegalArgumentException("Intervalo inválido: a data de início não pode ser posterior à data de fim.");
+            throw new IllegalArgumentException("Intervalo inválido: a data de início é posterior à data de fim.");
         }
 
         List<LogRecord> resultado = new ArrayList<>();
@@ -66,5 +73,13 @@ public class LogGrupo implements LogComponente {
         }
 
         return resultado;
+    }
+
+    public String getNomeCategoria() {
+        return nomeCategoria;
+    }
+
+    public List<LogComponente> getComponentes() {
+        return componentes;
     }
 }

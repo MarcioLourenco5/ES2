@@ -3,6 +3,7 @@ package M3;
 import M2.LogFactory;
 import M2.LogLevel;
 import M2.LogRecord;
+import M4.LogCatalogo;
 import M5.FormatterPool;
 import M5.LogFormatter;
 
@@ -12,6 +13,8 @@ import java.util.Set;
 public class SimpleLogger extends Logger {
 
     private static volatile SimpleLogger instancia;
+
+    // LinkedHashSet evita duplicados e mantém a ordem de inserção
     private final Set<LogDestino> destinos;
 
     private SimpleLogger() {
@@ -34,6 +37,7 @@ public class SimpleLogger extends Logger {
         if (destino == null) {
             throw new IllegalArgumentException("Destino não pode ser nulo.");
         }
+
         destinos.add(destino);
     }
 
@@ -43,11 +47,18 @@ public class SimpleLogger extends Logger {
 
     @Override
     public void log(LogLevel nivel, String mensagem) {
+        log("Geral", nivel, mensagem);
+    }
+
+    @Override
+    public void log(String categoria, LogLevel nivel, String mensagem) {
         LogRecord record = LogFactory.criarLog(nivel, mensagem);
 
         if (record == null) {
             return;
         }
+
+        LogCatalogo.getInstancia().registarLog(categoria, record);
 
         if (destinos.isEmpty()) {
             System.out.println("Aviso: nenhum destino configurado.");

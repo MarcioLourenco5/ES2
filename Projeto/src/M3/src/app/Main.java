@@ -1,128 +1,115 @@
 package app;
 
+import M1.LogConfig;
+import M2.LogLevel;
 import M3.LoggerFactory;
 import M3.SimpleLogger;
-import M1.LogConfig;
-import M2.LogFactory;
-import M2.LogLevel;
-import M2.LogRecord;
-import M4.LogFolha;
-import M4.LogGrupo;
+import M4.LogCatalogo;
+import M5.ConnectionPool;
 import M5.FormatterPool;
 import M5.LogFormatter;
-import M5.ConnectionPool;
 import M5.StorageConnection;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
 
+    public static void main(String[] args) {
+        configurarSistema();
+
+        SimpleLogger logger = LoggerFactory.getLogger();
+
+        testarEmissaoLogs(logger);
+        testarCatalogo();
+        testarFormatterPool();
+        testarConnectionPool();
+    }
+
+    private static void configurarSistema() {
         LogConfig config = LogConfig.getInstancia();
         config.setNivelMinimo(LogLevel.DEBUG);
         config.setFormatoMensagem("[%nivel%] %dataHora% - %mensagem%");
         config.setConsolaAtiva(true);
         config.setFicheiroAtivo(true);
         config.setBaseDadosAtiva(false);
+    }
 
-        SimpleLogger logger = LoggerFactory.getLogger();
+    private static void testarEmissaoLogs(SimpleLogger logger) {
+        System.out.println("============= M3 - Emissão de Logs =============");
 
-        logger.log(LogLevel.INFO, "Aplicação iniciada com sucesso.");
-        logger.log(LogLevel.WARNING, "Memória disponível abaixo do esperado.");
-        logger.log(LogLevel.ERROR, "Falha ao ligar à base de dados.");
-        logger.log(LogLevel.DEBUG, "Valor da variável x = 10.");
+        logger.log("Sistema", LogLevel.INFO, "Aplicação iniciada com sucesso.");
+        logger.log("Autenticação", LogLevel.WARNING, "Tentativa de login falhada.");
+        logger.log("Base de Dados", LogLevel.ERROR, "Falha ao ligar à base de dados.");
+        logger.log("Rede", LogLevel.WARNING, "Tempo de resposta da rede elevado.");
+        logger.log("Interface", LogLevel.ERROR, "Erro ao carregar interface.");
+        logger.log("Sistema", LogLevel.DEBUG, "Valor da variável x = 10.");
+    }
 
-        Thread.sleep(1000);
+    private static void testarCatalogo() {
+        System.out.println("\n============= M4 - Composite / Catálogo =============");
 
-        LogRecord log1 = LogFactory.criarLog(LogLevel.WARNING, "Tentativa de login falhada.");
-        Thread.sleep(1000);
-        LogRecord log2 = LogFactory.criarLog(LogLevel.ERROR, "Falha na ligação à base de dados.");
-        Thread.sleep(1000);
-        LogRecord log3 = LogFactory.criarLog(LogLevel.WARNING, "Tempo de resposta da rede elevado.");
-        Thread.sleep(1000);
-        LogRecord log4 = LogFactory.criarLog(LogLevel.ERROR, "Erro ao carregar interface.");
-
-        LogGrupo sistema = new LogGrupo("Sistema");
-
-        LogGrupo autenticacao = new LogGrupo("Autenticação");
-        LogGrupo baseDados = new LogGrupo("Base de Dados");
-        LogGrupo rede = new LogGrupo("Rede");
-        LogGrupo interfaceGrafica = new LogGrupo("Interface");
-
-        if (log1 != null) autenticacao.adicionar(new LogFolha(log1));
-        if (log2 != null) baseDados.adicionar(new LogFolha(log2));
-        if (log3 != null) rede.adicionar(new LogFolha(log3));
-        if (log4 != null) interfaceGrafica.adicionar(new LogFolha(log4));
-
-        sistema.adicionar(autenticacao);
-        sistema.adicionar(baseDados);
-        sistema.adicionar(rede);
-        sistema.adicionar(interfaceGrafica);
+        LogCatalogo catalogo = LogCatalogo.getInstancia();
 
         System.out.println("\n=== Estrutura de Logs ===");
-        sistema.mostrar("");
+        catalogo.mostrarEstrutura();
 
-        System.out.println("\nTotal de logs: " + sistema.contarLogs());
+        System.out.println("\nTotal de logs: " + catalogo.contarLogs());
 
         System.out.println("\n=== Logs do tipo ERROR ===");
-        List<LogRecord> erros = sistema.obterLogsPorNivel(LogLevel.ERROR);
-        for (LogRecord erro : erros) {
-            System.out.println(erro);
-        }
+        catalogo.obterLogsPorNivel(LogLevel.ERROR)
+                .forEach(System.out::println);
 
         LocalDateTime agora = LocalDateTime.now();
-        LocalDateTime inicio = agora.minusSeconds(3);
+        LocalDateTime inicio = agora.minusMinutes(5);
         LocalDateTime fim = agora;
 
         System.out.println("\n=== Logs entre " + inicio + " e " + fim + " ===");
-        List<LogRecord> logsIntervalo = sistema.obterLogsEntreDatas(inicio, fim);
-        for (LogRecord log : logsIntervalo) {
-            System.out.println(log);
+        catalogo.obterLogsEntreDatas(inicio, fim)
+                .forEach(System.out::println);
+    }
 
-            System.out.println("\n============= // ============= ");
+    private static void testarFormatterPool() {
+        System.out.println("\n============= M5 - FormatterPool =============");
 
+        FormatterPool formatterPool = FormatterPool.getInstancia();
 
-            System.out.println("=== Testes do FormatterPool ===");
-            FormatterPool formatterPool = FormatterPool.getInstancia();
+        System.out.println("Inicial -> disponíveis: " + formatterPool.getDisponiveis());
+        System.out.println("Inicial -> em uso: " + formatterPool.getEmUso());
 
-            System.out.println("Inicial -> disponíveis: " + formatterPool.getDisponiveis());
-            System.out.println("Inicial -> em uso: " + formatterPool.getEmUso());
+        LogFormatter f1 = formatterPool.adquirirFormatter();
+        LogFormatter f2 = formatterPool.adquirirFormatter();
 
-            LogFormatter f1 = formatterPool.adquirirFormatter();
-            LogFormatter f2 = formatterPool.adquirirFormatter();
+        System.out.println("Após adquirir 2 -> disponíveis: " + formatterPool.getDisponiveis());
+        System.out.println("Após adquirir 2 -> em uso: " + formatterPool.getEmUso());
 
-            System.out.println("Após adquirir 2 -> disponíveis: " + formatterPool.getDisponiveis());
-            System.out.println("Após adquirir 2 -> em uso: " + formatterPool.getEmUso());
+        formatterPool.libertarFormatter(f1);
+        formatterPool.libertarFormatter(f2);
 
-            formatterPool.libertarFormatter(f1);
-            formatterPool.libertarFormatter(f2);
+        System.out.println("Após libertar -> disponíveis: " + formatterPool.getDisponiveis());
+        System.out.println("Após libertar -> em uso: " + formatterPool.getEmUso());
+    }
 
-            System.out.println("Após libertar -> disponíveis: " + formatterPool.getDisponiveis());
-            System.out.println("Após libertar -> em uso: " + formatterPool.getEmUso());
+    private static void testarConnectionPool() {
+        System.out.println("\n============= M5 - ConnectionPool =============");
 
+        ConnectionPool connectionPool = ConnectionPool.getInstancia();
 
-            ConnectionPool pool = ConnectionPool.getInstancia();
-            System.out.println("\n=== Testes da ConnectionPool ===");
-            ConnectionPool connectionPool = ConnectionPool.getInstancia();
+        System.out.println("Inicial -> disponíveis: " + connectionPool.getDisponiveis());
+        System.out.println("Inicial -> em uso: " + connectionPool.getEmUso());
 
-            System.out.println("Inicial -> disponíveis: " + connectionPool.getDisponiveis());
-            System.out.println("Inicial -> em uso: " + connectionPool.getEmUso());
+        StorageConnection c1 = connectionPool.adquirirConexao();
+        StorageConnection c2 = connectionPool.adquirirConexao();
 
-            StorageConnection c1 = connectionPool.adquirirConexao();
-            StorageConnection c2 = connectionPool.adquirirConexao();
+        System.out.println("Após adquirir 2 -> disponíveis: " + connectionPool.getDisponiveis());
+        System.out.println("Após adquirir 2 -> em uso: " + connectionPool.getEmUso());
 
-            System.out.println("Após adquirir 2 -> disponíveis: " + connectionPool.getDisponiveis());
-            System.out.println("Após adquirir 2 -> em uso: " + connectionPool.getEmUso());
+        c1.enviar("Log ERROR: Falha no sistema");
+        c2.enviar("Log WARNING: Memória baixa");
 
-            c1.enviar("Log ERROR: Falha no sistema");
-            c2.enviar("Log WARNING: Memória baixa");
+        connectionPool.libertarConexao(c1);
+        connectionPool.libertarConexao(c2);
 
-            connectionPool.libertarConexao(c1);
-            connectionPool.libertarConexao(c2);
-
-            System.out.println("Após libertar -> disponíveis: " + connectionPool.getDisponiveis());
-            System.out.println("Após libertar -> em uso: " + connectionPool.getEmUso());
-        }
+        System.out.println("Após libertar -> disponíveis: " + connectionPool.getDisponiveis());
+        System.out.println("Após libertar -> em uso: " + connectionPool.getEmUso());
     }
 }
