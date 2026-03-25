@@ -8,6 +8,10 @@ import M2.LogLevel;
 import M2.LogRecord;
 import M4.LogFolha;
 import M4.LogGrupo;
+import M5.FormatterPool;
+import M5.LogFormatter;
+import M5.ConnectionPool;
+import M5.StorageConnection;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -75,6 +79,50 @@ public class Main {
         List<LogRecord> logsIntervalo = sistema.obterLogsEntreDatas(inicio, fim);
         for (LogRecord log : logsIntervalo) {
             System.out.println(log);
+
+            System.out.println("\n============= // ============= ");
+
+
+            System.out.println("=== Testes do FormatterPool ===");
+            FormatterPool formatterPool = FormatterPool.getInstancia();
+
+            System.out.println("Inicial -> disponíveis: " + formatterPool.getDisponiveis());
+            System.out.println("Inicial -> em uso: " + formatterPool.getEmUso());
+
+            LogFormatter f1 = formatterPool.adquirirFormatter();
+            LogFormatter f2 = formatterPool.adquirirFormatter();
+
+            System.out.println("Após adquirir 2 -> disponíveis: " + formatterPool.getDisponiveis());
+            System.out.println("Após adquirir 2 -> em uso: " + formatterPool.getEmUso());
+
+            formatterPool.libertarFormatter(f1);
+            formatterPool.libertarFormatter(f2);
+
+            System.out.println("Após libertar -> disponíveis: " + formatterPool.getDisponiveis());
+            System.out.println("Após libertar -> em uso: " + formatterPool.getEmUso());
+
+
+            ConnectionPool pool = ConnectionPool.getInstancia();
+            System.out.println("\n=== Testes da ConnectionPool ===");
+            ConnectionPool connectionPool = ConnectionPool.getInstancia();
+
+            System.out.println("Inicial -> disponíveis: " + connectionPool.getDisponiveis());
+            System.out.println("Inicial -> em uso: " + connectionPool.getEmUso());
+
+            StorageConnection c1 = connectionPool.adquirirConexao();
+            StorageConnection c2 = connectionPool.adquirirConexao();
+
+            System.out.println("Após adquirir 2 -> disponíveis: " + connectionPool.getDisponiveis());
+            System.out.println("Após adquirir 2 -> em uso: " + connectionPool.getEmUso());
+
+            c1.enviar("Log ERROR: Falha no sistema");
+            c2.enviar("Log WARNING: Memória baixa");
+
+            connectionPool.libertarConexao(c1);
+            connectionPool.libertarConexao(c2);
+
+            System.out.println("Após libertar -> disponíveis: " + connectionPool.getDisponiveis());
+            System.out.println("Após libertar -> em uso: " + connectionPool.getEmUso());
         }
     }
 }

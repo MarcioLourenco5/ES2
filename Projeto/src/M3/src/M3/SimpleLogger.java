@@ -1,9 +1,10 @@
 package M3;
 
-import M1.LogConfig;
 import M2.LogFactory;
 import M2.LogLevel;
 import M2.LogRecord;
+import M5.FormatterPool;
+import M5.LogFormatter;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -11,8 +12,6 @@ import java.util.Set;
 public class SimpleLogger extends Logger {
 
     private static volatile SimpleLogger instancia;
-
-    // LinkedHashSet → evita duplicados e mantém ordem de inserção
     private final Set<LogDestino> destinos;
 
     private SimpleLogger() {
@@ -35,11 +34,9 @@ public class SimpleLogger extends Logger {
         if (destino == null) {
             throw new IllegalArgumentException("Destino não pode ser nulo.");
         }
-
-        destinos.add(destino); // Set evita duplicados automaticamente
+        destinos.add(destino);
     }
 
-    // Opcional mas útil (para LoggerFactory)
     public void limparDestinos() {
         destinos.clear();
     }
@@ -49,7 +46,7 @@ public class SimpleLogger extends Logger {
         LogRecord record = LogFactory.criarLog(nivel, mensagem);
 
         if (record == null) {
-            return; // log bloqueado pelo nível mínimo
+            return;
         }
 
         if (destinos.isEmpty()) {
@@ -57,23 +54,17 @@ public class SimpleLogger extends Logger {
             return;
         }
 
-        String mensagemFormatada = formatarMensagem(record);
+        FormatterPool pool = FormatterPool.getInstancia();
+        LogFormatter formatter = pool.adquirirFormatter();
 
-        for (LogDestino destino : destinos) {
-            destino.escrever(mensagemFormatada);
+        try {
+            String mensagemFormatada = formatter.formatar(record);
+
+            for (LogDestino destino : destinos) {
+                destino.escrever(mensagemFormatada);
+            }
+        } finally {
+            pool.libertarFormatter(formatter);
         }
-    }
-
-    private String formatarMensagem(LogRecord record) {
-        String formato = LogConfig.getInstancia().getFormatoMensagem();
-
-        if (formato == null || formato.isBlank()) {
-            formato = "[%nivel%] %dataHora% - %mensagem%";
-        }
-
-        return formato
-                .replace("%nivel%", String.valueOf(record.getNivel()))
-                .replace("%dataHora%", String.valueOf(record.getDataHora()))
-                .replace("%mensagem%", record.getMensagem());
     }
 }

@@ -16,3 +16,23 @@
 [WARNING] 2026-03-20T15:40:57.454851700 - Memória disponível abaixo do esperado.
 [ERROR] 2026-03-20T15:40:57.454851700 - Falha ao ligar à base de dados.
 [DEBUG] 2026-03-20T15:40:57.454851700 - Valor da variável x = 10.
+[INFO] 2026-03-25T16:31:38.025690700 - Aplicação iniciada com sucesso.
+[WARNING] 2026-03-25T16:31:38.033693400 - Memória disponível abaixo do esperado.
+[ERROR] 2026-03-25T16:31:38.033693400 - Falha ao ligar à base de dados.
+[DEBUG] 2026-03-25T16:31:38.033693400 - Valor da variável x = 10.
+[INFO] 2026-03-25T16:36:56.825728300 - Aplicação iniciada com sucesso.
+[WARNING] 2026-03-25T16:36:56.833728500 - Memória disponível abaixo do esperado.
+[ERROR] 2026-03-25T16:36:56.834725800 - Falha ao ligar à base de dados.
+[DEBUG] 2026-03-25T16:36:56.834725800 - Valor da variável x = 10.
+[INFO] 2026-03-25T16:45:49.165048300 - Aplicação iniciada com sucesso.
+[WARNING] 2026-03-25T16:45:49.174049200 - Memória disponível abaixo do esperado.
+[ERROR] 2026-03-25T16:45:49.174049200 - Falha ao ligar à base de dados.
+[DEBUG] 2026-03-25T16:45:49.175049200 - Valor da variável x = 10.
+[INFO] 2026-03-25T16:53:41.630649 - Aplicação iniciada com sucesso.
+[WARNING] 2026-03-25T16:53:41.637656300 - Memória disponível abaixo do esperado.
+[ERROR] 2026-03-25T16:53:41.637656300 - Falha ao ligar à base de dados.
+[DEBUG] 2026-03-25T16:53:41.637656300 - Valor da variável x = 10.
+[INFO] 2026-03-25T16:58:38.410155300 - Aplicação iniciada com sucesso.
+[WARNING] 2026-03-25T16:58:38.418154800 - Memória disponível abaixo do esperado.
+[ERROR] 2026-03-25T16:58:38.418154800 - Falha ao ligar à base de dados.
+[DEBUG] 2026-03-25T16:58:38.418154800 - Valor da variável x = 10.
