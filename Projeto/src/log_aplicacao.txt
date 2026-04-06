@@ -1,0 +1,78 @@
+[INFO] 2026-03-27T11:34:16.687274100 - Aplicação iniciada com sucesso.
+[WARNING] 2026-03-27T11:34:16.714271800 - Tentativa de login falhada.
+[ERROR] 2026-03-27T11:34:16.715273400 - Falha ao ligar à base de dados.
+[WARNING] 2026-03-27T11:34:16.716272400 - Tempo de resposta da rede elevado.
+[ERROR] 2026-03-27T11:34:16.717274200 - Erro ao carregar interface.
+[DEBUG] 2026-03-27T11:34:16.718276400 - Valor da variável x = 10.
+[INFO] 2026-03-27T11:51:36.927803300 - Aplicação iniciada com sucesso.
+[WARNING] 2026-03-27T11:51:36.961798700 - Tentativa de login falhada.
+[ERROR] 2026-03-27T11:51:36.962799900 - Falha ao ligar à base de dados.
+[WARNING] 2026-03-27T11:51:36.963797800 - Tempo de resposta da rede elevado.
+[ERROR] 2026-03-27T11:51:36.965802100 - Erro ao carregar interface.
+[DEBUG] 2026-03-27T11:51:36.966797600 - Valor da variável x = 10.
+[INFO] 2026-04-06T16:41:08.326188400 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-06T16:41:08.354191900 - Tentativa de login falhada.
+[ERROR] 2026-04-06T16:41:08.355195300 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-06T16:41:08.356195900 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-06T16:41:08.357192600 - Erro ao carregar interface.
+[DEBUG] 2026-04-06T16:41:08.358195400 - Valor da variável x = 10.
+[INFO] 2026-04-06T16:55:54.155422300 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-06T16:55:54.175426800 - Tentativa de login falhada.
+[ERROR] 2026-04-06T16:55:54.176425600 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-06T16:55:54.177427 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-06T16:55:54.178426100 - Erro ao carregar interface.
+[DEBUG] 2026-04-06T16:55:54.179428700 - Valor da variável x = 10.
+[INFO] 2026-04-06T16:56:25.376283600 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-06T16:56:25.393287900 - Tentativa de login falhada.
+[ERROR] 2026-04-06T16:56:25.394289300 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-06T16:56:25.394289300 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-06T16:56:25.395289500 - Erro ao carregar interface.
+[DEBUG] 2026-04-06T16:56:25.396284600 - Valor da variável x = 10.
+[INFO] 2026-04-06T16:58:21.489872100 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-06T16:58:21.512870600 - Tentativa de login falhada.
+[ERROR] 2026-04-06T16:58:21.513875400 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-06T16:58:21.514879400 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-06T16:58:21.515878 - Erro ao carregar interface.
+[DEBUG] 2026-04-06T16:58:21.516879700 - Valor da variável x = 10.
+[INFO] 2026-04-06T16:58:50.043571200 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-06T16:58:50.059567900 - Tentativa de login falhada.
+[ERROR] 2026-04-06T16:58:50.060568200 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-06T16:58:50.060568200 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-06T16:58:50.060568200 - Erro ao carregar interface.
+[DEBUG] 2026-04-06T16:58:50.061568800 - Valor da variável x = 10.
+[INFO] 2026-04-06T16:59:30.193624 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-06T16:59:30.206621900 - Tentativa de login falhada.
+[ERROR] 2026-04-06T16:59:30.207625 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-06T16:59:30.207625 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-06T16:59:30.207625 - Erro ao carregar interface.
+[DEBUG] 2026-04-06T16:59:30.208624200 - Valor da variável x = 10.
+[INFO] 2026-04-06T17:07:51.742111600 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-06T17:07:51.757110200 - Tentativa de login falhada.
+[ERROR] 2026-04-06T17:07:51.759132500 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-06T17:07:51.760123700 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-06T17:07:51.760123700 - Erro ao carregar interface.
+[DEBUG] 2026-04-06T17:07:51.761112700 - Valor da variável x = 10.
+[INFO] 2026-04-06T17:23:16.058986200 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-06T17:23:16.077986600 - Tentativa de login falhada.
+[ERROR] 2026-04-06T17:23:16.078990700 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-06T17:23:16.079989600 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-06T17:23:16.080990100 - Erro ao carregar interface.
+[DEBUG] 2026-04-06T17:23:16.080990100 - Valor da variável x = 10.
+[INFO] 2026-04-06T17:34:16.653588200 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-06T17:34:16.660588400 - Tentativa de login falhada.
+[ERROR] 2026-04-06T17:34:16.661587400 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-06T17:34:16.661587400 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-06T17:34:16.661587400 - Erro ao carregar interface.
+[DEBUG] 2026-04-06T17:34:16.661587400 - Valor da variável x = 10.
+[INFO] 2026-04-06T17:36:33.268307300 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-06T17:36:33.274309200 - Tentativa de login falhada.
+[ERROR] 2026-04-06T17:36:33.275308800 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-06T17:36:33.275308800 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-06T17:36:33.275308800 - Erro ao carregar interface.
+[DEBUG] 2026-04-06T17:36:33.275308800 - Valor da variável x = 10.
+[INFO] 2026-04-06T17:58:15.606243900 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-06T17:58:15.616244400 - Tentativa de login falhada.
+[ERROR] 2026-04-06T17:58:15.616244400 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-06T17:58:15.616244400 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-06T17:58:15.617244 - Erro ao carregar interface.
+[DEBUG] 2026-04-06T17:58:15.617244 - Valor da variável x = 10.
