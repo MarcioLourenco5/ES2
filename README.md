@@ -68,7 +68,7 @@ Classes principais
 
  //---------------------------------//---------------------------------/ Observer  /---------------------------------//---------------------------------//
 
-M7 – Extensão de Funcionalidades Dinâmicas
+# M7 – Extensão de Funcionalidades Dinâmicas
 
 O módulo M7 foi implementado com base no padrão de desenho Observer, permitindo adicionar novas funcionalidades ao sistema de logs de forma dinâmica, sem modificar a estrutura principal.
 
