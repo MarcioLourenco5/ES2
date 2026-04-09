@@ -76,3 +76,62 @@
 [WARNING] 2026-04-06T17:58:15.616244400 - Tempo de resposta da rede elevado.
 [ERROR] 2026-04-06T17:58:15.617244 - Erro ao carregar interface.
 [DEBUG] 2026-04-06T17:58:15.617244 - Valor da variável x = 10.
+[INFO] 2026-04-08T22:27:18.566570500 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-08T22:27:18.575570 - Tentativa de login falhada.
+[ERROR] 2026-04-08T22:27:18.575570 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-08T22:27:18.575570 - Tempo de resposta da rede elevado.
+[ERROR] 2026-04-08T22:27:18.576570300 - Erro ao carregar interface.
+[DEBUG] 2026-04-08T22:27:18.576570300 - Valor da variável x = 10.
+[INFO] 2026-04-08T22:35:20.393426 - Log para CONSOLA e FICHEIRO
+[INFO] 2026-04-08T22:35:20.397425600 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-08T22:35:20.397425600 - Tentativa de login falhada.
+[ERROR] 2026-04-08T22:35:20.398426200 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-08T22:35:20.398426200 - Tempo de resposta elevado.
+[ERROR] 2026-04-08T22:35:20.398426200 - Erro ao carregar interface.
+[DEBUG] 2026-04-08T22:35:20.399425300 - Valor da variável x = 10.
+[INFO] 2026-04-08T22:35:20.408426900 - Log com configuração INICIAL
+[TESTE] Log com configuração TESTE
+[INFO] 2026-04-08T22:35:20.409425200 - Log após RESTORE INICIAL
+[INFO] 2026-04-08T22:35:20.410425100 - Utilizador autenticado
+[ERROR] 2026-04-08T22:35:20.411425300 - Falha ligação BD
+[ERROR] 2026-04-08T22:35:20.411425300 - Falha ligação BD
+[ERROR] 2026-04-08T22:35:20.411425300 - Falha ligação BD
+[WARNING] 2026-04-08T22:35:20.412425700 - Latência elevada
+[INFO] 2026-04-08T22:51:07.586733300 - Log para CONSOLA e FICHEIRO
+[INFO] 2026-04-08T22:51:07.590732700 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-08T22:51:07.591733500 - Tentativa de login falhada.
+[ERROR] 2026-04-08T22:51:07.591733500 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-08T22:51:07.591733500 - Tempo de resposta elevado.
+[ERROR] 2026-04-08T22:51:07.591733500 - Erro ao carregar interface.
+[DEBUG] 2026-04-08T22:51:07.592732100 - Valor da variável x = 10.
+[INFO] 2026-04-08T22:51:07.601732 - Log com configuração INICIAL
+[TESTE] Log com configuração TESTE
+[INFO] 2026-04-08T22:51:07.602733100 - Log após RESTORE INICIAL
+[INFO] 2026-04-08T22:51:07.603733100 - Utilizador autenticado
+[ERROR] 2026-04-08T22:51:07.603733100 - Falha ligação BD
+[ERROR] 2026-04-08T22:51:07.604733300 - Falha ligação BD
+[ERROR] 2026-04-08T22:51:07.604733300 - Falha ligação BD
+[WARNING] 2026-04-08T22:51:07.605733100 - Latência elevada
+[INFO] 2026-04-08T22:51:49.012896100 - Log para CONSOLA e FICHEIRO
+[INFO] 2026-04-08T22:51:49.017894500 - Aplicação iniciada com sucesso.
+[WARNING] 2026-04-08T22:51:49.019894300 - Tentativa de login falhada.
+[ERROR] 2026-04-08T22:51:49.019894300 - Falha ao ligar à base de dados.
+[WARNING] 2026-04-08T22:51:49.020895400 - Tempo de resposta elevado.
+[ERROR] 2026-04-08T22:51:49.020895400 - Erro ao carregar interface.
+[DEBUG] 2026-04-08T22:51:49.020895400 - Valor da variável x = 10.
+[INFO] 2026-04-08T22:51:49.028894600 - Log com configuração INICIAL
+[TESTE] Log com configuração TESTE
+[INFO] 2026-04-08T22:51:49.029894400 - Log após RESTORE INICIAL
+[INFO] 2026-04-08T22:51:49.030895600 - Utilizador autenticado
+[ERROR] 2026-04-08T22:51:49.031895100 - Falha ligação BD
+[ERROR] 2026-04-08T22:51:49.031895100 - Falha ligação BD
+[ERROR] 2026-04-08T22:51:49.032894500 - Falha ligação BD
+[WARNING] 2026-04-08T22:51:49.032894500 - Latência elevada
+[INFO] 2026-04-08T22:52:23.936521400 - Log para CONSOLA e FICHEIRO
+[TESTE] Log com configuração TESTE
+[INFO] 2026-04-08T22:59:34.356064200 - Log para CONSOLA e FICHEIRO
+[TESTE] Log com configuração TESTE
+[INFO] [Factory] 2026-04-08T22:28:55.968800682 - Log para CONSOLA e FICHEIRO
+[TESTE] Log com configuração TESTE
+[INFO] [Factory] 2026-04-09T15:32:24.322147100 - Log para CONSOLA e FICHEIRO
+[TESTE] Log com configuração TESTE
