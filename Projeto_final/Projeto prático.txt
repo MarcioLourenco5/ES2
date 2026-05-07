@@ -1,5 +1,0 @@
-Projeto prático
-
-criar código node js com os endpoints no enunciado ;
-Depois criar testes para os endpoints 
-
