@@ -1,0 +1,31 @@
+{
+  "name": "greenherb-api",
+  "version": "1.0.0",
+  "description": "Plataforma GREENHERB — Gestão Inteligente de Estufa",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": ["**/tests/unit/**/*.test.js"],
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/services/**/*.js",
+      "src/controllers/**/*.js"
+    ],
+    "coverageReporters": ["text", "lcov", "html"]
+  }
+}
