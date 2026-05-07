@@ -1,0 +1,24 @@
+# Dependências do Node (Obrigatório ignorar)
+node_modules/
+
+# Ficheiros de Log de erros do NPM
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ficheiros de Variáveis de Ambiente (Segurança)
+.env
+.env.test
+.env.production
+
+# Relatórios de Cobertura de Testes (Gerados pelo Jest)
+coverage/
+.nyc_output/
+
+# Ficheiros de Sistema Operativo (Para evitar lixo no repo)
+.DS_Store
+Thumbs.db
+
+# Configurações de Editores (Opcional, mas recomendado)
+.vscode/
+.idea/
