@@ -41,7 +41,7 @@ O sistema deve validar `username` e `password`, emitir um JWT em caso de sucesso
 
 | ID | Requisito | Endpoint / Módulo | Nível | Técnica | Classe | Resultado Esperado | Pré-condições |
 |----|-----------|-------------------|-------|---------|--------|--------------------|---------------|
-| TU-A01 | RF-AUTH: login com credenciais válidas | `authenticate()` | Unidade | PE — CE-U1+CE-P1 | ✓ | `success=true`, `status=200` | Mock user `admin`, `active=true`; `bcrypt.compare` → `true` |
+| TU-A01 | RF-AUTH: login com credenciais válidas | `authenticate()` | Unidade | PE — CE-U1+CE-P1 | ✓ | `success=true`, | Mock user `admin`, `active=true`; `bcrypt.compare` → `true` |
 | TU-A02 | RF-AUTH: username vazio rejeitado | `authenticate()` | Unidade | PE — CE-U2 | ✓ | `status=400`, `code=USERNAME_INVALID` | — |
 | TU-A03 | RF-AUTH: username null rejeitado | `authenticate()` | Unidade | PE — CE-U3 | ✓ | `status=400`, `code=USERNAME_REQUIRED` | — |
 | TU-A04 | RF-AUTH: username undefined rejeitado | `authenticate()` | Unidade | PE — CE-U3 | ✓ | `status=400`, `code=USERNAME_REQUIRED` | — |
