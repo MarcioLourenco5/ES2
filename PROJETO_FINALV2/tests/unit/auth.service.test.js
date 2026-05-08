@@ -149,4 +149,23 @@ describe('PE — Password', () => {
     expect(result.status).toBe(400);
     expect(result.code).toBe(ERRORS.PASSWORD_INVALID);
   });
+
+test('TU-A14 | CE-U2 + CE-P2 | username e password vazios → 400 USERNAME_INVALID', async () => {
+    // Nota: Assume-se que a validação do username ocorre primeiro na lógica do serviço
+    const result = await authenticate('', '', mockUsers);
+    
+    expect(result.success).toBe(false);
+    expect(result.status).toBe(400);
+    // Validamos se ele retorna o erro do primeiro campo inválido detectado
+    expect(result.code).toBe(ERRORS.USERNAME_INVALID);
+  });
+
+  test('TU-A15 | CE-U3 + CE-P3 | username e password null/undefined → 400 USERNAME_REQUIRED', async () => {
+    const result = await authenticate(undefined, undefined, mockUsers);
+    
+    expect(result.success).toBe(false);
+    expect(result.status).toBe(400);
+    expect(result.code).toBe(ERRORS.USERNAME_REQUIRED);
+  });
+
 });

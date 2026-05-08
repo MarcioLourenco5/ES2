@@ -54,8 +54,10 @@ O sistema deve validar `username` e `password`, emitir um JWT em caso de sucesso
 | TU-A11 | RF-AUTH: password undefined rejeitada | `authenticate()` | Unidade | PE — CE-P3 | ✓ | `status=400`, `code=PASSWORD_REQUIRED` | — |
 | TU-A12 | RF-AUTH: password incorrecta (user existe) | `authenticate()` | Unidade | PE — CE-P4 | ✓ | `status=401`, `code=CREDENTIALS_INVALID` | `bcrypt.compare` → `false` |
 | TU-A13 | RF-AUTH: password só com espaços | `authenticate()` | Unidade | PE — CE-P5 | ✓ | `status=400`, `code=PASSWORD_INVALID` | — |
+| TU-A14 | RF-AUTH: username e password simultaneamente vazios | `authenticate()` | Unidade | PE — CE-U2+CE-P2 | ✓ | `status=400`, `code=USERNAME_INVALID` | Validação de username precede a de password |
+| TU-A15 | RF-AUTH: username e password simultaneamente null/undefined | `authenticate()` | Unidade | PE — CE-U3+CE-P3 | ✓ | `status=400`, `code=USERNAME_REQUIRED` | Validação de username precede a de password |
 
-**Total Sprint 1:** 13 testes de unidade — todos passam ✓
+**Total Sprint 1:** 15 testes de unidade — todos passam ✓
 
 ---
 
@@ -69,6 +71,7 @@ O sistema deve validar `username` e `password`, emitir um JWT em caso de sucesso
 | RF-AUTH: validação de password (formato e presença) | TU-A09, TU-A10, TU-A11, TU-A13 |
 | RF-AUTH: password verificada com bcrypt | TU-A12 |
 | RF-AUTH: login com sucesso emite JWT | TU-A01, TU-A08 |
+| RF-AUTH: prioridade de validação (username validado antes de password) | TU-A14, TU-A15 |
 
 ---
 
@@ -76,7 +79,7 @@ O sistema deve validar `username` e `password`, emitir um JWT em caso de sucesso
 
 ```
 Test Suites: 1 passed
-Tests:       13 passed
+Tests:       15 passed
 Time:        ~1.2s
 ```
 
