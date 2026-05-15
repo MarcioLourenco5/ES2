@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node app.js",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:unit": "jest tests/unit",
+    "test:sprint3": "jest tests/unit --verbose",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -20,12 +23,19 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "testMatch": ["**/tests/unit/**/*.test.js"],
-    "coverageDirectory": "coverage",
-    "collectCoverageFrom": [
-      "src/services/**/*.js",
-      "src/controllers/**/*.js"
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/setup.js"
     ],
-    "coverageReporters": ["text", "lcov", "html"]
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    }
   }
 }
